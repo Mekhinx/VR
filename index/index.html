@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script src="../aframe-master.js"></script>
+    <script src="../camera-position.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse" camera-position>
+      <a-assets>
+        <a-asset-item id="kamino" src="../alien_planet.glb"></a-asset-item>
+        <a-asset-item id="mustafar" src="../planet_venus.glb"></a-asset-item>
+        <a-asset-item
+          id="dagobah"
+          src="../planet_serendip__free_sample.glb"
+        ></a-asset-item>
+        <audio id="vehicle" src="../holo.mp3"></audio>
+        <img
+          id="ship"
+          src="../realistic_star_wars_jedi_order_inside_the_spaceshi.jpg"
+        />
+      </a-assets>
+      <a-link
+        href="kamino.html"
+        scale="0.3 0.3 0.3"
+        position="-1.25 0.75 -3.0"
+        gltf-model="#kamino"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      ></a-link>
+      <a-link
+        href="mustafar.html"
+        scale="0.0006 0.0006 0.0006"
+        position="0 0.75 -2.9"
+        gltf-model="#mustafar"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      ></a-link>
+      <a-link
+        href="dagobah.html"
+        scale="0.3 0.3 0.3"
+        position="1.25 0.75 -3.0"
+        gltf-model="#dagobah"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+      ></a-link>
+      <a-light intensity="5" position="0 -6 12"></a-light>
+      <a-sky
+        src="#ship"
+        sound="src: #vehicle; autoplay:true;loop:true;"
+        rotation="0 90 0"
+      ></a-sky>
+    </a-scene>
+  </body>
+</html>

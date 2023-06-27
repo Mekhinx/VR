@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src="../aframe-master.js"></script>
+    <script src="../camera-position.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse" camera-position>
+      <a-assets>
+        <a-asset-item
+          id="index"
+          src="../star_wars_alpha-class_xg-1_star_wing.glb"
+        ></a-asset-item>
+        <a-asset-item id="kamino" src="../alien_planet.glb"></a-asset-item>
+        <a-asset-item
+          id="dagobah"
+          src="../planet_serendip__free_sample.glb"
+        ></a-asset-item>
+        <audio id="msound" src="../mf.mp3"></audio>
+        <img
+          id="mworld"
+          src="../realistic_star_wars_mustafar_fire_planet (1).jpg"
+        />
+      </a-assets>
+      <a-link
+        href="index.html"
+        scale="1 1 1"
+        position="3 -2 -15"
+        rotation="0 -120 0"
+        gltf-model="#index"
+        animation="property: position; to: -2 -2 -15; dur: 1500; easing: linear; loop: true"
+      ></a-link>
+      <a-link
+        href="kamino.html"
+        scale="5 5 5"
+        position="45 30 -70"
+        gltf-model="#kamino"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 65000"
+      ></a-link>
+      <a-link
+        href="dagobah.html"
+        scale="5 5 5"
+        position="-80 40 -70"
+        gltf-model="#dagobah"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 65000"
+      ></a-link>
+      <a-light intensity="3" position="0 -6 12"></a-light>
+      <a-sky
+        src="#mworld"
+        sound="src: #msound; autoplay:true;loop:true;"
+        rotation="0 -90 45"
+      ></a-sky>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script src="../aframe-master.js"></script>
+    <script src="../camera-position.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse" camera-position>
+      <a-assets>
+        <a-asset-item
+          id="index"
+          src="../star_wars_tiead_avenger.glb"
+        ></a-asset-item>
+        <a-asset-item id="mustafar" src="../planet_venus.glb"></a-asset-item>
+        <a-asset-item
+          id="dagobah"
+          src="../planet_serendip__free_sample.glb"
+        ></a-asset-item>
+        <audio id="ksound" src="../kamino.mp3"></audio>
+        <img id="kaminoworld" src="../realistic_star_wars_planet_kamino_.jpg" />
+      </a-assets>
+      <a-link
+        href="index.html"
+        scale="0.3 0.3 0.3"
+        position="-2.5 0.75 -4"
+        rotation="0 75 0"
+        gltf-model="#index"
+        animation="property: position; to: -2.5 0.85 -4; dur: 1500; easing: linear; loop: true"
+      ></a-link>
+      <a-link
+        href="mustafar.html"
+        scale="0.005 0.005 0.005"
+        position="19 15 -30"
+        gltf-model="#mustafar"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 65000"
+      ></a-link>
+      <a-link
+        href="dagobah.html"
+        scale="1.5 1.5 1.5"
+        position="-30 15 -30"
+        gltf-model="#dagobah"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 65000"
+      ></a-link>
+      <a-light intensity="5" position="0 -6 12"></a-light>
+      <a-sky
+        src="#kaminoworld"
+        sound="src: #ksound; autoplay:true;loop:true;"
+        rotation="0 170 0"
+      ></a-sky>
+    </a-scene>
+  </body>
+</html>

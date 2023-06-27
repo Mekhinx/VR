@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script src="../aframe-master.js"></script>
+    <script src="../camera-position.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse" camera-position>
+      <a-assets>
+        <a-asset-item
+          id="index"
+          src="../star_wars_-_halcon_milenario.glb"
+        ></a-asset-item>
+        <a-asset-item id="mustafar" src="../planet_venus.glb"></a-asset-item>
+        <a-asset-item id="kamino" src="../alien_planet.glb"></a-asset-item>
+        <audio id="ksound" src="../kamino.mp3"></audio>
+        <img
+          id="daworld"
+          src="../realistic_star_wars_dagobah_green_planet (1).jpg"
+        />
+      </a-assets>
+      <a-link
+        href="index.html"
+        scale="0.01 0.01 0.01"
+        position="-7 -0.5 -12"
+        rotation="0 75 20"
+        gltf-model="#index"
+        animation="property: position; to: -7 -0.25 -12; dur: 1500; easing: linear; loop: true"
+      ></a-link>
+      <a-link
+        href="mustafar.html"
+        scale="0.005 0.005 0.005"
+        position="22 20 -30"
+        gltf-model="#mustafar"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 65000"
+      ></a-link>
+      <a-link
+        href="kamino.html"
+        scale="1.5 1.5 1.5"
+        position="-20 15 -30"
+        gltf-model="#kamino"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 65000"
+      ></a-link>
+      <a-light intensity="2" position="0 6 12"></a-light>
+      <a-sky
+        src="#daworld"
+        sound="src: #ksound; autoplay:true;loop:true;"
+        rotation="0 250 0"
+      ></a-sky>
+    </a-scene>
+  </body>
+</html>
